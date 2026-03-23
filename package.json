@@ -45,7 +45,6 @@
         "build:docs": "tsc -p tsconfig.docs.json",
         "lint": "tsc --noEmit && oxlint && oxfmt --check",
         "fmt": "oxfmt",
-        "test": "vitest",
         "docs": "npm run build:docs && api-extractor run --local"
     },
     "dependencies": {
