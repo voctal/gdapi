@@ -1,7 +1,4 @@
-/**
- * @deprecated The version will not be exported in the next major version.
- */
-export const version = "0.0.0";
+export const version: string = __PACKAGE_VERSION__;
 
 export * from "./resources/gauntlets";
 export * from "./resources/levels";

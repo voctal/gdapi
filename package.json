@@ -25,13 +25,14 @@
     "files": [
         "dist"
     ],
+    "type": "module",
     "main": "./dist/index.js",
     "module": "./dist/index.mjs",
-    "types": "./dist/index.d.ts",
+    "types": "./dist/index.d.cts",
     "exports": {
         ".": {
             "require": {
-                "types": "./dist/index.d.ts",
+                "types": "./dist/index.d.cts",
                 "default": "./dist/index.js"
             },
             "import": {
@@ -41,7 +42,7 @@
         }
     },
     "scripts": {
-        "build": "tsup",
+        "build": "tsdown",
         "build:docs": "tsc -p tsconfig.docs.json",
         "lint": "tsc --noEmit && oxlint && oxfmt --check",
         "fmt": "oxfmt",
@@ -49,17 +50,17 @@
         "docs": "npm run build:docs && api-extractor run --local"
     },
     "dependencies": {
-        "zod": "^3.25.63"
+        "zod": "^4.3.6"
     },
     "devDependencies": {
-        "@microsoft/api-extractor": "^7.55.2",
-        "@types/node": "^25.0.3",
-        "oxfmt": "^0.21.0",
-        "oxlint": "^1.36.0",
-        "tsup": "^8.5.1",
+        "@microsoft/api-extractor": "^7.57.7",
+        "@types/node": "^25.5.0",
+        "oxfmt": "^0.41.0",
+        "oxlint": "^1.56.0",
+        "tsdown": "^0.21.4",
         "typescript": "^5.9.3"
     },
     "engines": {
-        "node": ">=18"
+        "node": ">=22"
     }
 }
