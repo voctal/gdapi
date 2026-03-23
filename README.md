@@ -46,4 +46,4 @@ console.log(user);
 
 ## Help
 
-Need help with the modules? Ask on our [support server!](https://voctal.dev/discord)
+Need help with the module? Ask on our [support server!](https://voctal.dev/discord)
