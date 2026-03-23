@@ -22,7 +22,7 @@ Node.js 22 or newer is required.
 npm install @voctal/gdapi@latest
 ```
 
-## Usage
+## Example usage
 
 ```js
 import { GDAPI } from "@voctal/gdapi";
