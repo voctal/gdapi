@@ -9,7 +9,7 @@ import { BOOMLINGS_URL } from "./constants";
 export class REST {
     /**
      * Throws {@link APIError} if the request fail
-     * 
+     *
      * @param path - Must start with `/`
      */
     public async request(method: string, path: string, body?: Record<string, string>): Promise<Response> {

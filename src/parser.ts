@@ -28,7 +28,7 @@ export const parseRawObject = (data: string): [string, string][] => {
 /**
  * Parse and validate a GD object in the format `key:value:key:value`
  */
-export const parseObject = <T extends z.AnyZodObject>(
+export const parseObject = <T extends z.ZodObject>(
     data: string,
     mappings: Record<number, string>,
     schema: T,
@@ -47,9 +47,9 @@ export const parseObject = <T extends z.AnyZodObject>(
 /**
  * Parse and validate a GD tuple list in the format `value:value:value|value:value:value`
  */
-export const parseTupleList = <T extends z.AnyZodTuple>(list: string, schema: T): z.infer<T>[] => {
+export const parseTupleList = <T extends z.ZodTuple>(list: string, schema: T): z.infer<T>[] => {
     const rawTuples = list.split("|");
-    const tuples = [];
+    const tuples: z.infer<T>[] = [];
 
     for (const rawTuple of rawTuples) {
         const tuple = parseTuple(rawTuple, schema);
@@ -62,7 +62,7 @@ export const parseTupleList = <T extends z.AnyZodTuple>(list: string, schema: T)
 /**
  * Parse and validate a GD object list in the format `<object>|<object>`
  */
-export const parseObjectList = <T extends z.AnyZodObject>(
+export const parseObjectList = <T extends z.ZodObject>(
     list: string,
     mappings: Record<number, string>,
     schema: T,
@@ -81,7 +81,7 @@ export const parseObjectList = <T extends z.AnyZodObject>(
 /**
  * Parse and validate a GD tuple in the format `value:value:value`
  */
-export const parseTuple = <T extends z.AnyZodTuple>(data: string, schema: T): z.infer<T> => {
+export const parseTuple = <T extends z.ZodTuple>(data: string, schema: T): z.infer<T> => {
     const rawTuple = data.split(":");
     return schema.parse(rawTuple);
 };
@@ -123,7 +123,7 @@ export const parseRawSong = (data: string): [string, string][] => {
 /**
  * Parse and validate a GD song in the format `key~|~value~|~key~|~value`
  */
-export const parseSong = <T extends z.AnyZodObject>(
+export const parseSong = <T extends z.ZodObject>(
     data: string,
     mappings: Record<number, string>,
     schema: T,
@@ -142,7 +142,7 @@ export const parseSong = <T extends z.AnyZodObject>(
 /**
  * Parse and validate a GD song list in the format `<song>:<song>`
  */
-export const parseSongList = <T extends z.AnyZodObject>(
+export const parseSongList = <T extends z.ZodObject>(
     list: string,
     mappings: Record<number, string>,
     schema: T,

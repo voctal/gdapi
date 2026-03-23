@@ -55,7 +55,7 @@ export const gauntletSchema = z.object({
     levels: z
         .string()
         .transform(val => val.split(","))
-        .pipe(z.array(z.coerce.number().int())),
+        .pipe(z.array(z.coerce.number<string>().int())),
 });
 
 export type Gauntlet = z.infer<typeof gauntletSchema>;

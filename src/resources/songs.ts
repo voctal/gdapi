@@ -81,7 +81,7 @@ export const songSchema = z.object({
     extraArtistIds: z
         .string()
         .transform(val => val.split("."))
-        .pipe(z.array(z.coerce.number().int()))
+        .pipe(z.array(z.coerce.number<string>().int()))
         .optional(),
     /**
      * Whether the NEW icon shows up or not
@@ -106,7 +106,7 @@ export const songSchema = z.object({
             }
             return result;
         })
-        .pipe(z.array(z.tuple([z.coerce.number().int(), z.string()])))
+        .pipe(z.array(z.tuple([z.coerce.number<string>().int(), z.string()])))
         .optional(),
 });
 

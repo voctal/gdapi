@@ -164,7 +164,7 @@ export const userSchema = z.object({
     demons: z
         .string()
         .transform(val => val.split(","))
-        .pipe(z.array(z.coerce.number().int()))
+        .pipe(z.array(z.coerce.number<string>().int()))
         .optional(),
     /**
      * Breakdown of the player's classic mode non-demons, in the format
@@ -173,7 +173,7 @@ export const userSchema = z.object({
     classicLevels: z
         .string()
         .transform(val => val.split(","))
-        .pipe(z.array(z.coerce.number().int()))
+        .pipe(z.array(z.coerce.number<string>().int()))
         .optional(),
     /**
      * Breakdown of the player's platformer mode non-demons, in the format
@@ -182,7 +182,7 @@ export const userSchema = z.object({
     platformerLevels: z
         .string()
         .transform(val => val.split(","))
-        .pipe(z.array(z.coerce.number().int()))
+        .pipe(z.array(z.coerce.number<string>().int()))
         .optional(),
     /**
      * The youtube url of the player

@@ -90,7 +90,7 @@ export const listSchema = z.object({
     levels: z
         .string()
         .transform(val => val.split(","))
-        .pipe(z.array(z.coerce.number().int())),
+        .pipe(z.array(z.coerce.number<string>().int())),
     /**
      * The amount of diamonds awarded upon beating the required amount of levels in the list
      */

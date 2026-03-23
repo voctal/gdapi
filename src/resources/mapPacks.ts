@@ -40,7 +40,7 @@ export const mapPacksSchema = z.object({
     levels: z
         .string()
         .transform(val => val.split(","))
-        .pipe(z.array(z.coerce.number().int())),
+        .pipe(z.array(z.coerce.number<string>().int())),
     /**
      * Stars given when completed
      */
@@ -61,14 +61,14 @@ export const mapPacksSchema = z.object({
     textColor: z
         .string()
         .transform(val => val.split(","))
-        .pipe(z.array(z.coerce.number().int()).length(3)),
+        .pipe(z.array(z.coerce.number<string>().int()).length(3)),
     /**
      * The RGB color of the completion bar
      */
     barColor: z
         .string()
         .transform(val => val.split(","))
-        .pipe(z.array(z.coerce.number().int()).length(3)),
+        .pipe(z.array(z.coerce.number<string>().int()).length(3)),
 });
 
 export type MapPack = z.infer<typeof mapPacksSchema>;
