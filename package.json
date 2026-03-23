@@ -1,6 +1,6 @@
 {
     "$schema": "https://json.schemastore.org/package.json",
-    "name": "@sodiumlabs/gdapi",
+    "name": "@voctal/gdapi",
     "version": "1.0.3",
     "description": "An unofficial Geometry Dash API wrapper",
     "keywords": [
@@ -8,19 +8,18 @@
         "dash",
         "gd",
         "geometry",
-        "sodium",
-        "sodiumlabs",
+        "voctal",
         "wrapper"
     ],
-    "homepage": "https://github.com/sodium-labs/gdapi#readme",
+    "homepage": "https://github.com/voctal/gdapi",
     "bugs": {
-        "url": "https://github.com/sodium-labs/gdapi/issues"
+        "url": "https://github.com/voctal/gdapi/issues"
     },
     "license": "MIT",
-    "author": "sodiumlabs",
+    "author": "voctal",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/sodium-labs/gdapi.git"
+        "url": "git+https://github.com/voctal/gdapi.git"
     },
     "files": [
         "dist"
